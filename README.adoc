@@ -1,0 +1,18 @@
+== Spring Homebrew Taps
+
+This a https://brew.sh/[Homebrew] https://docs.brew.sh/Taps[tap] repository containing a "formulae" for Spring products. 
+
+## Usage
+
+First, add this tap to your Brew. This will to clone Pivotal tap repository and symlink all its formulae.
+
+----
+$ brew tap spring-io/tap
+----
+
+Now you will be able to work with Spring products as if there were in canonical Homebrew repository:
+
+----
+$ brew install springboot
+----
+
