@@ -1,6 +1,6 @@
 require 'formula'
 
-class Springboot < Formula
+class SpringBoot < Formula
   homepage 'https://spring.io/projects/spring-boot'
   url 'https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/2.4.1/spring-boot-cli-2.4.1-bin.tar.gz'
   version '2.4.1'
