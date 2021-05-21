@@ -2,9 +2,9 @@ require 'formula'
 
 class SpringBoot < Formula
   homepage 'https://spring.io/projects/spring-boot'
-  url 'https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/2.4.5/spring-boot-cli-2.4.5-bin.tar.gz'
-  version '2.4.5'
-  sha256 '44a7238ad89dfc1d5abbf412256f8423f32f54d5a17b44b572de4eaf5aac9f04'
+  url 'https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/2.5.0/spring-boot-cli-2.5.0-bin.tar.gz'
+  version '2.5.0'
+  sha256 '69b41c6d95eca479cc13132f1d5216a125b16790ce890127d6737fbbcee7938a'
   head 'https://github.com/spring-projects/spring-boot.git'
 
   if build.head?
