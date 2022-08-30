@@ -13,6 +13,6 @@ $ brew tap spring-io/tap
 Now you will be able to work with Spring products as if there were in canonical Homebrew repository:
 
 ----
-$ brew install springboot
+$ brew install spring-boot
 ----
 
