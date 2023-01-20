@@ -2,19 +2,16 @@ require 'formula'
 
 class SpringBoot < Formula
   homepage 'https://spring.io/projects/spring-boot'
-  url 'https://repo1.maven.org/maven2/org/springframework/boot/spring-boot-cli/3.0.1/spring-boot-cli-3.0.1-bin.tar.gz'
-  version '3.0.1'
-  sha256 '58bfd79b4dc6913c45fc82f3f36e9ed52363963b21a2534106e33b4485618b52'
-  head 'https://github.com/spring-projects/spring-boot.git'
-
-  if build.head?
-    depends_on 'maven' => :build
-  end
+  url 'https://repo1.maven.org/maven2/org/springframework/boot/spring-boot-cli/3.0.2/spring-boot-cli-3.0.2-bin.tar.gz'
+  version '3.0.2'
+  sha256 '592e54ffa1e002cfd075385fb08c389252ad24c2a0861c59b7d926df95a94e79'
+  head 'https://github.com/spring-projects/spring-boot.git', :branch => "main"
 
   def install
     if build.head?
-      Dir.chdir('spring-boot-cli') { system 'mvn -U -DskipTests=true package' }
-      root = 'spring-boot-cli/target/spring-boot-cli-*-bin/spring-*'
+      system './gradlew spring-boot-project:spring-boot-tools:spring-boot-cli:tar'
+      system 'tar -xzf spring-boot-project/spring-boot-tools/spring-boot-cli/build/distributions/spring-* -C spring-boot-project/spring-boot-tools/spring-boot-cli/build/distributions'
+      root = 'spring-boot-project/spring-boot-tools/spring-boot-cli/build/distributions/spring-*'
     else
       root = '.'
     end
