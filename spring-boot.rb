@@ -2,9 +2,9 @@ require 'formula'
 
 class SpringBoot < Formula
   homepage 'https://spring.io/projects/spring-boot'
-  url 'https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-cli/3.1.4/spring-boot-cli-3.1.4-bin.tar.gz'
-  version '3.1.4'
-  sha256 '1150935bd0d7359a28fb5190f0ff01ffccf244f5b584b9e110a0d7328196ac7d'
+  url 'https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-cli/3.1.5/spring-boot-cli-3.1.5-bin.tar.gz'
+  version '3.1.5'
+  sha256 '3f6b044b9ee5bbbd0cc0f82124e23b67c4de38050cfc59dd631cafa9f6d4e6f8'
   head 'https://github.com/spring-projects/spring-boot.git', :branch => "main"
 
   def install
