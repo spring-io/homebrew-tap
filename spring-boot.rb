@@ -1,24 +1,16 @@
-require 'formula'
+<html>
+<head><title>404 Not Found</title></head>
+<body bgcolor="white">
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
 
-class SpringBoot < Formula
-  homepage 'https://spring.io/projects/spring-boot'
-  url 'https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-cli/3.3.1/spring-boot-cli-3.3.1-bin.tar.gz'
-  version '3.3.1'
-  sha256 'a5737e57fe938a9dbe9669ea5a914f2467dcfb7c034cd927894477f37e41f44a'
-  head 'https://github.com/spring-projects/spring-boot.git', :branch => "main"
 
-  def install
-    if build.head?
-      system './gradlew spring-boot-project:spring-boot-tools:spring-boot-cli:tar'
-      system 'tar -xzf spring-boot-project/spring-boot-tools/spring-boot-cli/build/distributions/spring-* -C spring-boot-project/spring-boot-tools/spring-boot-cli/build/distributions'
-      root = 'spring-boot-project/spring-boot-tools/spring-boot-cli/build/distributions/spring-*'
-    else
-      root = '.'
-    end
 
-    bin.install Dir["#{root}/bin/spring"]
-    lib.install Dir["#{root}/lib/spring-boot-cli-*.jar"]
-    bash_completion.install Dir["#{root}/shell-completion/bash/spring"]
-    zsh_completion.install Dir["#{root}/shell-completion/zsh/_spring"]
-  end
-end
