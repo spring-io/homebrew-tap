@@ -2,9 +2,9 @@ require 'formula'
 
 class SpringBoot < Formula
   homepage 'https://spring.io/projects/spring-boot'
-  url 'https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-cli/3.5.6/spring-boot-cli-3.5.6-bin.tar.gz'
-  version '3.5.6'
-  sha256 '3ac9314100c474ddad1c4ae04a85404383817d6f748820980e26ccbe55393bbe'
+  url 'https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-cli/3.4.11/spring-boot-cli-3.4.11-bin.tar.gz'
+  version '3.4.11'
+  sha256 '14ba0cbdd94302e84e52cb82f710c09895265896c1bc3b21d1e6e62e905f7ae8'
   head 'https://github.com/spring-projects/spring-boot.git', :branch => "main"
 
   def install
@@ -16,9 +16,13 @@ class SpringBoot < Formula
       root = '.'
     end
 
-    bin.install Dir["#{root}/bin/spring"]
-    lib.install Dir["#{root}/lib/spring-boot-cli-*.jar"]
-    bash_completion.install Dir["#{root}/shell-completion/bash/spring"]
-    zsh_completion.install Dir["#{root}/shell-completion/zsh/_spring"]
+    libexec.install Dir["#{root}/*"]
+    (bin/"spring").write_env_script libexec/"bin/spring", {}
+
+    bash_comp = libexec/"shell-completion/bash/spring"
+    zsh_comp  = libexec/"shell-completion/zsh/_spring"
+
+    bash_completion.install bash_comp if bash_comp.exist?
+    zsh_completion.install  zsh_comp  if zsh_comp.exist?
   end
 end
