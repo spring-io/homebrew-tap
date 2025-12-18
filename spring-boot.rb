@@ -2,21 +2,12 @@ require 'formula'
 
 class SpringBoot < Formula
   homepage 'https://spring.io/projects/spring-boot'
-  url 'https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-cli/3.5.9/spring-boot-cli-3.5.9-bin.tar.gz'
-  version '3.5.9'
-  sha256 '023a8b21062df7951e28b5ecf517b766658597438db617ded265d01c984ca7d1'
-  head 'https://github.com/spring-projects/spring-boot.git', :branch => "main"
+  url 'https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-cli/4.0.1/spring-boot-cli-4.0.1-bin.tar.gz'
+  version '4.0.1'
+  sha256 '018adb0f6bc6594695785e95382d5933a38a1f48878d922e94938a85d0b8e835'
 
   def install
-    if build.head?
-      system './gradlew spring-boot-project:spring-boot-tools:spring-boot-cli:tar'
-      system 'tar -xzf spring-boot-project/spring-boot-tools/spring-boot-cli/build/distributions/spring-* -C spring-boot-project/spring-boot-tools/spring-boot-cli/build/distributions'
-      root = 'spring-boot-project/spring-boot-tools/spring-boot-cli/build/distributions/spring-*'
-    else
-      root = '.'
-    end
-
-    libexec.install Dir["#{root}/*"]
+    libexec.install Dir["./*"]
     (bin/"spring").write_env_script libexec/"bin/spring", {}
 
     bash_comp = libexec/"shell-completion/bash/spring"
