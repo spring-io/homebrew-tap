@@ -2,9 +2,9 @@ require 'formula'
 
 class SpringBoot < Formula
   homepage 'https://spring.io/projects/spring-boot'
-  url 'https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-cli/4.1.3/spring-boot-cli-4.1.3-bin.tar.gz'
-  version '4.1.3'
-  sha256 'e0c6a6a627d43c0c3410eab3585a498aa82b948b7fd5ffc7b26ddf498f847976'
+  url 'https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-cli/4.0.10/spring-boot-cli-4.0.10-bin.tar.gz'
+  version '4.0.10'
+  sha256 'fabbdacaa029b7e7ff2844798e27aebce71a18d97f828abe4e4ebd2db93dcf24'
 
   def install
     libexec.install Dir["./*"]
